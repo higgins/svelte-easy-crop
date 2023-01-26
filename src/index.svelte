@@ -14,6 +14,7 @@
   export let zoomSpeed = 1
   export let crossOrigin = null
   export let restrictPosition = true
+  export let rotation = 0;
 
   let cropperSize = null
   let imageSize = { width: 0, height: 0, naturalWidth: 0, naturalHeight: 0 }
@@ -244,7 +245,7 @@
     src={image}
     on:load={onImgLoad}
     alt=""
-    style="transform: translate({crop.x}px, {crop.y}px) scale({zoom});"
+    style="transform: translate({crop.x}px, {crop.y}px) scale({zoom}); transform: rotate({rotation}deg)"
     crossorigin={crossOrigin}
   />
   {#if cropperSize}
